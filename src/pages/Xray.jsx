@@ -11,70 +11,43 @@ import xray from '../images/xray/xray.jpg';
 import mike from '../images/xray/mike.jpg';
 import empty from '../images/xray/empty.webp';
 
-// TODO: Make an animal detector - only dogs and fish allowed
+// Make an animal detector - only dogs and fish allowed
 // this is the component that this file is returning to our screen
 const Xray = () => {
-  // the textfield value 
-  const [inputText, setInputText] = useState('');
-  // image to be displayed
-  const [image, setImage] = useState(xray);
+  // TODO: store the textfield value in the inputText state variable
+  // defaulted to an empty string
+
+  // TODO: state variable of image to be displayed
+  // defaulted to the xray pic
+
 
   // checks the inputText value and sets the image based on inputText value
   // e.g., does inputText contain 'dog', 'fish', or both/none?
   function checkText() {
-    // convert text input to lower case for easier comparison below
-    const lowercaseText = inputText.toLowerCase();
-    // declaring a mutable (changeable) variable
-    let imageSrc;
+    // TODO: store the inputText state variable in lowercaseText for easier comparison   
+    
 
-    // if the text includes 'dog' and 'fish'
-    if (lowercaseText.includes('dog') && lowercaseText.includes('fish')) {
-      // set imageSrc to dog (imported at the top)
-      imageSrc = dogfish;
+    // TODO: declare a mutable (changeable) variable called imageSrc
 
-    // if the text includes 'dog'
-    } else if (lowercaseText.includes('dog')) {
-      imageSrc = dog;
 
-    // if the text includes 'fish'
-    } else if (lowercaseText.includes('fish')) {
-      imageSrc = fish;
+    // TODO: check cases against lowercaseText and assign the right image to imageSrc
 
-    // if there is no text (length 0)
-    } else if (lowercaseText.length === 0) {
-      imageSrc = empty;
 
-    // if none of the above are matched then return mike
-    }  else {
-      imageSrc = mike;
-    }
+    // TODO: finally set the image state variable to imageSrc
 
-    // finally set the image state variable to imageSrc
-    setImage(imageSrc);
   };
 
-  // Function runs whenever user enters in input
-  function handleKeyPress(event) {
-    // If user presses enter key, checks over text 
-    if (event.key === 'Enter') {
-      checkText();
-    }
-  };
+  // // Function runs whenever user enters in input
+  // function handleKeyPress(event) {
+  //   // If user presses enter key, checks over text 
+  //   if (event.key === 'Enter') {
+  //     checkText();
+  //   }
+  // };
 
   return (
     <div className='container'>
-      <h1 className='header'>list your bag contents below. can only detect dog or fishes unfortunately</h1>
-      <input
-        type="text"
-        placeholder="let's xray something..."
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        onKeyPress={handleKeyPress}
-      />
-      <Button onClick={checkText}>Check</Button>
-      <div class='img-container'>
-        <img src={image} alt="Image" />
-      </div>
+      xray slayyyy
     </div>
   );
 };

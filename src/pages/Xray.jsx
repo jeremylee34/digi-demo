@@ -1,7 +1,9 @@
 import { useState, React } from 'react';
 
+// importing our custom button
 import Button from '../components/Button';
 
+// importing pics
 import dog from '../images/xray/dog.jpg';
 import fish from '../images/xray/fish.jpg';
 import dogfish from '../images/xray/dogfish.jpg';
@@ -9,49 +11,43 @@ import xray from '../images/xray/xray.jpg';
 import mike from '../images/xray/mike.jpg';
 import empty from '../images/xray/empty.webp';
 
-
-// ToDo: Make a species detector for dogs and fish
+// Make an animal detector - only dogs and fish allowed
+// this is the component that this file is returning to our screen
 const Xray = () => {
-  // Put main logic/hooks here 
-  const [inputText, setInputText] = useState('');
-  const [result, setResult] = useState(xray);
+  // TODO: store the textfield value in the inputText state variable
+  // defaulted to an empty string
 
+  // TODO: state variable of image to be displayed
+  // defaulted to the xray pic
+
+
+  // checks the inputText value and sets the image based on inputText value
+  // e.g., does inputText contain 'dog', 'fish', or both/none?
   function checkText() {
-    const lowercaseText = inputText.toLowerCase();
-    let imageSrc = mike;
+    // TODO: store the inputText state variable in lowercaseText for easier comparison   
+    
 
-    if (lowercaseText.includes('dog') && lowercaseText.includes('fish')) {
-      imageSrc = dogfish;
-    } else if (lowercaseText.includes('dog')) {
-      imageSrc = dog;
-    } else if (lowercaseText.includes('fish')) {
-      imageSrc = fish;
-    } else if (lowercaseText.length === 0) {
-      imageSrc = empty;
-    }
-    setResult(imageSrc);
+    // TODO: declare a mutable (changeable) variable called imageSrc
+
+
+    // TODO: check cases against lowercaseText and assign the right image to imageSrc
+
+
+    // TODO: finally set the image state variable to imageSrc
+
   };
 
-  function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-      checkText();
-    }
-  };
+  // // Function runs whenever user enters in input
+  // function handleKeyPress(event) {
+  //   // If user presses enter key, checks over text 
+  //   if (event.key === 'Enter') {
+  //     checkText();
+  //   }
+  // };
 
   return (
     <div className='container'>
-      <h1 className='header'>list your bag contents below. can only detect dog or fishes unfortunately</h1>
-      <input
-        type="text"
-        placeholder="let's xray something..."
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        onKeyPress={handleKeyPress}
-      />
-      <Button onClick={checkText}>Check</Button>
-      <div class='img-container'>
-        <img src={result} alt="Result" />
-      </div>
+      xray slayyyy
     </div>
   );
 };

@@ -31,6 +31,7 @@ const Facts = () => {
   return (
     // TODO: Put JSX here
     <div className='container'>
+      fax
     </div>
   )
 }
